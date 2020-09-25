@@ -74,7 +74,7 @@ class Overlay extends React.Component {
           <Content>
             <Breadcrumb style={{ margin: "16px 0" }}>
               <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>Orders</Breadcrumb.Item>
+              <Breadcrumb.Item>Breadcrumb</Breadcrumb.Item>
             </Breadcrumb>
             <div
               style={{
