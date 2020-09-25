@@ -34,12 +34,21 @@ class Overlay extends React.Component {
             backgroundColor: colors.primaryDark,
           }}
         >
-          <div className="logo" />
+          <div style={{ height: 100 }} />
           <Menu
             style={{ backgroundColor: colors.primaryDark }}
             defaultSelectedKeys={["1"]}
             mode="inline"
           >
+            <Menu.Item
+              key="1"
+              icon={<FormOutlined />}
+              style={{
+                background: colors.primaryLight,
+              }}
+            >
+              <Link to="/purchase"> Purchase </Link>
+            </Menu.Item>
             <Menu.Item
               key="1"
               icon={<FormOutlined />}
@@ -60,8 +69,26 @@ class Overlay extends React.Component {
             </Menu.Item>
           </Menu>
         </Sider>
-
-        <Content>{this.props.children}</Content>
+        <Layout>
+          <Header title="Trellis" style={{ background: colors.primaryLight }} />
+          <Content>
+            <Breadcrumb style={{ margin: "16px 0" }}>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>Orders</Breadcrumb.Item>
+            </Breadcrumb>
+            <div
+              style={{
+                padding: 100,
+                minHeight: 360,
+                background: colors.white,
+                margin: 50,
+              }}
+            >
+              {this.props.children}
+            </div>
+          </Content>
+          <Footer style={{ textAlign: "center" }}> Trellis, Inc.</Footer>
+        </Layout>
       </Layout>
     );
   }

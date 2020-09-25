@@ -14,6 +14,7 @@ export const colors = {
   errorLight: "hsl(0, 100%, 91%)",
   error: "#C00000",
   errorDark: "hsl(0, 100%, 28%)",
+  white: "#FFFFFF",
   warning: {
     light: "hsl(50, 100%, 92%)",
     main: "hsl(46, 100%, 78%)",

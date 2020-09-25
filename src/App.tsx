@@ -5,6 +5,7 @@ import Overlay from "./components/Overlay";
 import { Router, RouteComponentProps } from "@reach/router";
 import Orders from "./components/Orders";
 import Hardware from "./components/Hardware";
+import Purchase from "./components/Purchase";
 import { colors } from "./theme";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -23,6 +24,10 @@ const App: React.FC = () => {
     {
       path: "/hardware",
       Component: Hardware,
+    },
+    {
+      path: "/purchase",
+      Component: Purchase,
     },
   ];
 
