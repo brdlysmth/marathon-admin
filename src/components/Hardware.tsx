@@ -4,7 +4,7 @@ import { Layout, Menu, Breadcrumb } from "antd";
 import { List, Avatar, Button, Skeleton } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 
-const UNASSIGNED_HARDWARE = gql`
+const ALL_HARDWARE = gql`
   query {
     allDistributors {
       id
@@ -21,11 +21,29 @@ const UNASSIGNED_HARDWARE = gql`
         }
       }
     }
+    allSensors {
+      id
+      owner {
+        name {
+          first
+          last
+        }
+      }
+    }
+    allGateways {
+      id
+      owner {
+        name {
+          first
+          last
+        }
+      }
+    }
   }
 `;
 
 const Orders: React.FC = () => {
-  const { loading, error, data } = useQuery(UNASSIGNED_HARDWARE);
+  const { loading, error, data } = useQuery(ALL_HARDWARE);
 
   console.log(data);
 
