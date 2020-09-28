@@ -6,6 +6,7 @@ import { Router, RouteComponentProps } from "@reach/router";
 import Orders from "./components/Orders";
 import AssignedHardware from "./components/Assigned";
 import UnassignedHardware from "./components/Unassigned";
+import UnboundHardware from "./components/Unbound";
 import Purchase from "./components/Purchase";
 import { colors } from "./theme";
 const { Header, Content, Footer, Sider } = Layout;
@@ -23,12 +24,16 @@ const App: React.FC = () => {
       Component: Orders,
     },
     {
-      path: "/hardware",
+      path: "/hardware/assigned",
       Component: AssignedHardware,
     },
     {
-      path: "/unassigned",
+      path: "/hardware/unassigned",
       Component: UnassignedHardware,
+    },
+    {
+      path: "/hardware/unbound",
+      Component: UnboundHardware,
     },
     {
       path: "/purchase",

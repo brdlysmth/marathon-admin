@@ -44,7 +44,7 @@ const ALL_HARDWARE = gql`
   }
 `;
 
-const UnassignedHardware: React.FC = () => {
+const UnboundHardware: React.FC = () => {
   const { loading, error, data } = useQuery(ALL_HARDWARE);
 
   console.log(data);
@@ -160,4 +160,4 @@ const UnassignedHardware: React.FC = () => {
   );
 };
 
-export default UnassignedHardware;
+export default UnboundHardware;

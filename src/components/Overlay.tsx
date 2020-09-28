@@ -32,6 +32,7 @@ class Overlay extends React.Component {
           onCollapse={this.onCollapse}
           style={{
             backgroundColor: colors.primaryDark,
+            color: colors.primaryDark,
           }}
         >
           <div style={{ height: 100 }} />
@@ -58,7 +59,12 @@ class Overlay extends React.Component {
             >
               <Link to="/orders"> Orders </Link>
             </Menu.Item>
-            <SubMenu key="submenu" icon={<UserOutlined />} title="Hardware">
+            <SubMenu
+              key="submenu"
+              icon={<UserOutlined />}
+              style={{ background: colors.primaryDark }}
+              title="Hardware"
+            >
               <Menu.Item
                 key="1"
                 icon={<FormOutlined />}
@@ -66,7 +72,7 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware"> Hardware </Link>
+                <Link to="/hardware/assigned"> Assigned </Link>
               </Menu.Item>
               <Menu.Item
                 key="1"
@@ -75,7 +81,16 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/unassigned"> Unassigned </Link>
+                <Link to="/hardware/unassigned"> Unassigned </Link>
+              </Menu.Item>
+              <Menu.Item
+                key="1"
+                icon={<FormOutlined />}
+                style={{
+                  background: colors.primaryLight,
+                }}
+              >
+                <Link to="/hardware/unbound"> Unbound </Link>
               </Menu.Item>
             </SubMenu>
           </Menu>
