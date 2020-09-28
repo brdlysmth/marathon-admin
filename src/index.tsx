@@ -3,25 +3,25 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  ApolloLink,
+} from "@apollo/client";
 import { gql } from "@apollo/client";
+import { onError } from "apollo-link-error";
+
+// const errorLink = onError(({ graphQLErrors }) => {
+//   if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message));
+// });
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql/external",
   cache: new InMemoryCache(),
+  // https://stackoverflow.com/questions/48863441/apollo-client-how-to-simply-debug-a-400-code-error
+  // link: ApolloLink.from([errorLink]),
 });
-
-client
-  .query({
-    query: gql`
-      query {
-        allOrders {
-          id
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
 
 ReactDOM.render(
   <React.StrictMode>
