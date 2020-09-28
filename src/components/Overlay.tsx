@@ -68,7 +68,7 @@ class Overlay extends React.Component {
               key="submenu"
               icon={<UserOutlined />}
               style={{
-                backgroundColor: colors.primaryDark,
+                backgroundColor: colors.primaryLight,
                 color: colors.white,
               }}
               title="Hardware"
@@ -80,9 +80,13 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware/assigned" style={{ color: colors.white }}>
-                  {" "}
-                  Assigned{" "}
+                <Link
+                  to="/hardware/assigned"
+                  style={{
+                    color: colors.white,
+                  }}
+                >
+                  Assigned
                 </Link>
               </Menu.Item>
               <Menu.Item
@@ -92,9 +96,13 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware/unassigned" style={{ color: colors.white }}>
-                  {" "}
-                  Unassigned{" "}
+                <Link
+                  to="/hardware/unassigned"
+                  style={{
+                    color: colors.white,
+                  }}
+                >
+                  Unassigned
                 </Link>
               </Menu.Item>
               <Menu.Item
@@ -104,9 +112,13 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware/unbound" style={{ color: colors.white }}>
-                  {" "}
-                  Unbound{" "}
+                <Link
+                  to="/hardware/unbound"
+                  style={{
+                    color: colors.white,
+                  }}
+                >
+                  Unbound
                 </Link>
               </Menu.Item>
             </SubMenu>
