@@ -4,7 +4,8 @@ import { Layout, Menu, Breadcrumb } from "antd";
 import Overlay from "./components/Overlay";
 import { Router, RouteComponentProps } from "@reach/router";
 import Orders from "./components/Orders";
-import Hardware from "./components/Hardware";
+import AssignedHardware from "./components/Assigned";
+import UnassignedHardware from "./components/Unassigned";
 import Purchase from "./components/Purchase";
 import { colors } from "./theme";
 const { Header, Content, Footer, Sider } = Layout;
@@ -23,7 +24,11 @@ const App: React.FC = () => {
     },
     {
       path: "/hardware",
-      Component: Hardware,
+      Component: AssignedHardware,
+    },
+    {
+      path: "/unassigned",
+      Component: UnassignedHardware,
     },
     {
       path: "/purchase",

@@ -43,7 +43,7 @@ const ALL_HARDWARE = gql`
   }
 `;
 
-const Orders: React.FC = () => {
+const UnassignedHardware: React.FC = () => {
   const { loading, error, data } = useQuery(ALL_HARDWARE);
 
   console.log(data);
@@ -63,6 +63,12 @@ const Orders: React.FC = () => {
   }[] = [];
 
   const sensorHardware: {
+    id: string;
+    type: "Sensor" | "Gateway";
+    owner: string | null;
+  }[] = [];
+
+  const gatewayHardware: {
     id: string;
     type: "Sensor" | "Gateway";
     owner: string | null;
@@ -118,4 +124,4 @@ const Orders: React.FC = () => {
   );
 };
 
-export default Orders;
+export default UnassignedHardware;

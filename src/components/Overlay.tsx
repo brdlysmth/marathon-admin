@@ -58,15 +58,26 @@ class Overlay extends React.Component {
             >
               <Link to="/orders"> Orders </Link>
             </Menu.Item>
-            <Menu.Item
-              key="1"
-              icon={<FormOutlined />}
-              style={{
-                background: colors.primaryLight,
-              }}
-            >
-              <Link to="/hardware"> Hardware </Link>
-            </Menu.Item>
+            <SubMenu key="submenu" icon={<UserOutlined />} title="Hardware">
+              <Menu.Item
+                key="1"
+                icon={<FormOutlined />}
+                style={{
+                  background: colors.primaryLight,
+                }}
+              >
+                <Link to="/hardware"> Hardware </Link>
+              </Menu.Item>
+              <Menu.Item
+                key="1"
+                icon={<FormOutlined />}
+                style={{
+                  background: colors.primaryLight,
+                }}
+              >
+                <Link to="/unassigned"> Unassigned </Link>
+              </Menu.Item>
+            </SubMenu>
           </Menu>
         </Sider>
         <Layout>
