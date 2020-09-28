@@ -48,7 +48,9 @@ class Overlay extends React.Component {
                 background: colors.primaryLight,
               }}
             >
-              <Link to="/purchase"> Purchase </Link>
+              <Link to="/purchase" style={{ color: colors.white }}>
+                Purchase
+              </Link>
             </Menu.Item>
             <Menu.Item
               key="1"
@@ -57,12 +59,18 @@ class Overlay extends React.Component {
                 background: colors.primaryLight,
               }}
             >
-              <Link to="/orders"> Orders </Link>
+              <Link to="/orders" style={{ color: colors.white }}>
+                Orders
+              </Link>
             </Menu.Item>
+
             <SubMenu
               key="submenu"
               icon={<UserOutlined />}
-              style={{ background: colors.primaryDark }}
+              style={{
+                backgroundColor: colors.primaryDark,
+                color: colors.white,
+              }}
               title="Hardware"
             >
               <Menu.Item
@@ -72,7 +80,10 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware/assigned"> Assigned </Link>
+                <Link to="/hardware/assigned" style={{ color: colors.white }}>
+                  {" "}
+                  Assigned{" "}
+                </Link>
               </Menu.Item>
               <Menu.Item
                 key="1"
@@ -81,7 +92,10 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware/unassigned"> Unassigned </Link>
+                <Link to="/hardware/unassigned" style={{ color: colors.white }}>
+                  {" "}
+                  Unassigned{" "}
+                </Link>
               </Menu.Item>
               <Menu.Item
                 key="1"
@@ -90,7 +104,10 @@ class Overlay extends React.Component {
                   background: colors.primaryLight,
                 }}
               >
-                <Link to="/hardware/unbound"> Unbound </Link>
+                <Link to="/hardware/unbound" style={{ color: colors.white }}>
+                  {" "}
+                  Unbound{" "}
+                </Link>
               </Menu.Item>
             </SubMenu>
           </Menu>

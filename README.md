@@ -42,3 +42,13 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## ANTD NOTES
+
+#### Overriding theme colors
+
+- /node_modules/antd/dist
+- create a file called my-theme.less
+- replace colors (@) with what you want
+- lessc — js my-theme.less ../../../src/style/custom-antd.css
+- replace import “antd/dist/antd.css” with import “../src/style/custom-antd.css”
