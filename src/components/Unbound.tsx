@@ -144,13 +144,12 @@ const UnboundHardware: React.FC = () => {
       />
       <Divider />
       <List
-        grid={{ gutter: 16, column: 4 }}
         dataSource={unassignedHardware}
         renderItem={(unassignedHardware: any) => (
           <div>
             <List.Item>
               <div style={{ justifyContent: "left" }}>
-                <Card title={unassignedHardware.id}> content </Card>
+                {unassignedHardware.id}
               </div>
             </List.Item>
           </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Layout, Menu, Breadcrumb, Typography, Input, Divider } from "antd";
 import { Card } from "antd";
@@ -79,13 +79,12 @@ const AssignedHardware: React.FC = () => {
       />
       <Divider />
       <List
-        grid={{ gutter: 16, column: 4 }}
         dataSource={assignedHardware}
         renderItem={(assignedHardware: any) => (
           <div>
             <List.Item>
               <div style={{ justifyContent: "left" }}>
-                <Card title={assignedHardware.id}> content </Card>
+                {assignedHardware.id}
               </div>
             </List.Item>
           </div>
