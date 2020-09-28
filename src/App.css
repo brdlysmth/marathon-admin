@@ -33,7 +33,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 #components-layout-demo-side .logo {
@@ -51,17 +50,17 @@
 }
 
 .ant-menu-item-selected {
-  color: #ffffff;
+  color: #195c43;
 }
 
 .ant-menu-item-active {
-  color: #ffffff;
+  color: #195c43;
 }
 
 .ant-menu-item {
   color: #ffffff;
 }
 
-.ant-menu {
-  color: #ffffff;
+.ant-menu.ant-menu-sub.ant-menu-inline {
+  background: #195c43;
 }

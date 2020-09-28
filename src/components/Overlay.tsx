@@ -32,6 +32,7 @@ class Overlay extends React.Component {
           onCollapse={this.onCollapse}
           style={{
             backgroundColor: colors.primaryDark,
+            background: colors.primaryDark,
             color: colors.primaryDark,
           }}
         >
