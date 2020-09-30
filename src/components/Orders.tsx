@@ -6,42 +6,33 @@ import { List, Avatar, Button, Skeleton } from "antd";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const ALL_ORDERS = gql`
+const ALL_BOOKS = gql`
   query {
-    allOrders {
-      id
-      details {
-        rep {
-          name {
-            first
-            last
-          }
-        }
-      }
-      boundIds
+    books {
+      title
     }
   }
 `;
 
 const Orders: React.FC = () => {
-  const { loading, error, data } = useQuery(ALL_ORDERS);
+  const { loading, error, data } = useQuery(ALL_BOOKS);
 
   console.log(data);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
+  console.log(data);
+
   return (
     <List
       itemLayout="horizontal"
       bordered
-      dataSource={data.allOrders}
-      renderItem={(order: any) => (
+      dataSource={data.books}
+      renderItem={(book: any) => (
         <div>
           <List.Item>
-            <div style={{ justifyContent: "left" }}>
-              {order.id} | {order.details.rep.name.first}
-            </div>
+            <div style={{ justifyContent: "left" }}>{book.title}</div>
           </List.Item>
         </div>
       )}
