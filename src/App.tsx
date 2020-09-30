@@ -3,11 +3,10 @@ import "./App.css";
 import { Layout, Menu, Breadcrumb } from "antd";
 import Overlay from "./components/Overlay";
 import { Router, RouteComponentProps } from "@reach/router";
-import Orders from "./components/Orders";
-import AssignedHardware from "./components/Assigned";
-import UnassignedHardware from "./components/Unassigned";
-import UnboundHardware from "./components/Unbound";
-import Purchase from "./components/Purchase";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import Incoming from "./components/Incoming";
+import Outgoing from "./components/Outgoing";
 import { colors } from "./theme";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -20,24 +19,20 @@ interface RouteProps {
 const App: React.FC = () => {
   const routes: RouteProps[] = [
     {
-      path: "/orders",
-      Component: Orders,
+      path: "/home",
+      Component: Home,
     },
     {
-      path: "/hardware/assigned",
-      Component: AssignedHardware,
+      path: "/projects",
+      Component: Projects,
     },
     {
-      path: "/hardware/unassigned",
-      Component: UnassignedHardware,
+      path: "/incoming",
+      Component: Incoming,
     },
     {
-      path: "/hardware/unbound",
-      Component: UnboundHardware,
-    },
-    {
-      path: "/purchase",
-      Component: Purchase,
+      path: "/outgoing",
+      Component: Outgoing,
     },
   ];
 

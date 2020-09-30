@@ -49,8 +49,8 @@ class Overlay extends React.Component {
                 background: colors.primaryLight,
               }}
             >
-              <Link to="/purchase" style={{ color: colors.white }}>
-                Purchase
+              <Link to="/home" style={{ color: colors.white }}>
+                Home
               </Link>
             </Menu.Item>
             <Menu.Item
@@ -60,69 +60,34 @@ class Overlay extends React.Component {
                 background: colors.primaryLight,
               }}
             >
-              <Link to="/orders" style={{ color: colors.white }}>
-                Orders
+              <Link to="/projects" style={{ color: colors.white }}>
+                Projects
               </Link>
             </Menu.Item>
 
-            <SubMenu
-              key="submenu"
-              icon={<UserOutlined />}
+            <Menu.Item
+              key="1"
+              icon={<FormOutlined />}
               style={{
-                backgroundColor: colors.primaryLight,
-                color: colors.white,
+                background: colors.primaryLight,
               }}
-              title="Hardware"
             >
-              <Menu.Item
-                key="1"
-                icon={<FormOutlined />}
-                style={{
-                  background: colors.primaryLight,
-                }}
-              >
-                <Link
-                  to="/hardware/assigned"
-                  style={{
-                    color: colors.white,
-                  }}
-                >
-                  Assigned
-                </Link>
-              </Menu.Item>
-              <Menu.Item
-                key="1"
-                icon={<FormOutlined />}
-                style={{
-                  background: colors.primaryLight,
-                }}
-              >
-                <Link
-                  to="/hardware/unassigned"
-                  style={{
-                    color: colors.white,
-                  }}
-                >
-                  Unassigned
-                </Link>
-              </Menu.Item>
-              <Menu.Item
-                key="1"
-                icon={<FormOutlined />}
-                style={{
-                  background: colors.primaryLight,
-                }}
-              >
-                <Link
-                  to="/hardware/unbound"
-                  style={{
-                    color: colors.white,
-                  }}
-                >
-                  Unbound
-                </Link>
-              </Menu.Item>
-            </SubMenu>
+              <Link to="/incoming" style={{ color: colors.white }}>
+                Incoming
+              </Link>
+            </Menu.Item>
+
+            <Menu.Item
+              key="1"
+              icon={<FormOutlined />}
+              style={{
+                background: colors.primaryLight,
+              }}
+            >
+              <Link to="/outgoing" style={{ color: colors.white }}>
+                Outgoing
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>

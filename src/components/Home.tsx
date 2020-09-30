@@ -14,7 +14,7 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 8 },
 };
 
-const Purchase: React.FC = () => {
+const Home: React.FC = () => {
   const [form] = Form.useForm();
 
   const onGenderChange = (value: any) => {
@@ -120,4 +120,4 @@ const Purchase: React.FC = () => {
   );
 };
 
-export default Purchase;
+export default Home;

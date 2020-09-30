@@ -14,7 +14,7 @@ const ALL_BOOKS = gql`
   }
 `;
 
-const Orders: React.FC = () => {
+const Outgoing: React.FC = () => {
   const { loading, error, data } = useQuery(ALL_BOOKS);
 
   console.log(data);
@@ -40,4 +40,4 @@ const Orders: React.FC = () => {
   );
 };
 
-export default Orders;
+export default Outgoing;
