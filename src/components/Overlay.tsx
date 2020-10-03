@@ -88,6 +88,17 @@ class Overlay extends React.Component {
                 Outgoing
               </Link>
             </Menu.Item>
+            <Menu.Item
+              key="1"
+              icon={<FormOutlined />}
+              style={{
+                background: colors.primaryLight,
+              }}
+            >
+              <a href="http://localhost:1234" style={{ color: colors.white }}>
+                Viewer
+              </a>
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>

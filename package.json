@@ -44,5 +44,14 @@
   },
   "devDependencies": {
     "@types/reach__router": "^1.3.5"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "node_modules/@pdftron/webviewer/public",
+        "staticOutDir": "lib"
+      }
+    ],
+    "watcherGlob": "**"
   }
 }

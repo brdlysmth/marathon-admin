@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Layout, Menu, Breadcrumb } from "antd";
 import Overlay from "./components/Overlay";
-import { Router, RouteComponentProps } from "@reach/router";
+import { Router, RouteComponentProps, Redirect } from "@reach/router";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Incoming from "./components/Incoming";
