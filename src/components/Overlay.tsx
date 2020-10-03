@@ -7,6 +7,10 @@ import {
   FileOutlined,
   TeamOutlined,
   UserOutlined,
+  HomeOutlined,
+  ProjectOutlined,
+  DoubleLeftOutlined,
+  DoubleRightOutlined,
 } from "@ant-design/icons";
 import { colors } from "../theme";
 
@@ -44,7 +48,7 @@ class Overlay extends React.Component {
           >
             <Menu.Item
               key="1"
-              icon={<FormOutlined />}
+              icon={<HomeOutlined />}
               style={{
                 background: colors.primaryLight,
               }}
@@ -55,7 +59,7 @@ class Overlay extends React.Component {
             </Menu.Item>
             <Menu.Item
               key="1"
-              icon={<FormOutlined />}
+              icon={<ProjectOutlined />}
               style={{
                 background: colors.primaryLight,
               }}
@@ -67,7 +71,7 @@ class Overlay extends React.Component {
 
             <Menu.Item
               key="1"
-              icon={<FormOutlined />}
+              icon={<DoubleLeftOutlined />}
               style={{
                 background: colors.primaryLight,
               }}
@@ -79,7 +83,7 @@ class Overlay extends React.Component {
 
             <Menu.Item
               key="1"
-              icon={<FormOutlined />}
+              icon={<DoubleRightOutlined />}
               style={{
                 background: colors.primaryLight,
               }}
