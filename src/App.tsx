@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Incoming from "./components/Incoming";
 import Outgoing from "./components/Outgoing";
+import AddProject from "./components/AddProject";
 import { colors } from "./theme";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -25,6 +26,10 @@ const App: React.FC = () => {
     {
       path: "/projects",
       Component: Projects,
+    },
+    {
+      path: "/addProject",
+      Component: AddProject,
     },
     {
       path: "/incoming",
