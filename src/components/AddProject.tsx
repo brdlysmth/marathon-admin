@@ -18,8 +18,10 @@ const tailLayout = {
 };
 
 const ADD_PROJECT = gql`
-  mutation setName {
-    setName
+  mutation AddProject(input: AddProjectInput) {
+    AddProject(input: $input) {
+      name
+    }
   }
 `;
 

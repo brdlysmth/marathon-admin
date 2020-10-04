@@ -13,9 +13,8 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const ALL_USER_PROJECTS = gql`
   query {
-    projects {
+    AllProjects {
       name
-      number
     }
   }
 `;
