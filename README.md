@@ -1,3 +1,13 @@
+### Admin Starter
+
+- TypeScript
+- Create React App
+- Apollo Client
+- Reach Router
+- Ant Design UI
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
