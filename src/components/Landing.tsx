@@ -9,15 +9,16 @@ const Landing: React.FC = () => {
         <>
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}>
                 <div>
-                    <h1> Welcome to Marathon Trainer </h1>  
+                    <h1> Welcome to Race Trainer </h1>  
                 </div>
             </div>
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-                <Link to='/number'>
+                <Link to='/plan'>
                     <Button variant='outlined'>
                         Sign In
                     </Button>
                 </Link>
+                <div style={{ width: '10px' }}></div>
                 <Button variant='outlined'>
                     Sign Up
                 </Button>

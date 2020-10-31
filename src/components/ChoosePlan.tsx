@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { Link } from '@reach/router';
+// graphql stuff 
+import { useQuery, useMutation, gql } from "@apollo/client";
+
 
 // Material UI
 import Button from '@material-ui/core/Button';
@@ -9,29 +12,48 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
-import { subscriptionsRef } from '../services/firebase';
+
+const ADD_SUBSCRIPTION = gql`
+        mutation addSubscription($input: AddSubscriptionInput!) {
+            AddSubscription(input: $input) {
+                success
+            }
+        }
+    `;
 
 const ChoosePlan: React.FC = () => {
-    const [plan, setPlan] = React.useState('');
-    const [number, setNumber] = React.useState('');
+    const [raceType, setRaceType] = React.useState('');
+    const [phoneNumber, setPhoneNumber] = React.useState('');
+    const [skillLevel, setSkillLevel] = React.useState('');
+    const [
+        addSubscription,
+        { loading: mutationLoading, error: mutationError },
+    ] = useMutation(ADD_SUBSCRIPTION);
 
-    const startSubscription = (number: string, plan: string) => {
+    const startSubscription = async (phoneNumber: string, raceType: string, skillLevel: string) => {
         console.log('Starting subscription...')
-        subscriptionsRef.push({
-            phoneNumber: number,
-            plan: plan
-        })
+        addSubscription({
+            variables: { input: { phoneNumber: phoneNumber, raceType: raceType, skillLevel: skillLevel } },
+            });
+        // await subscriptionsRef.push({
+        //     phoneNumber: phoneNumber,
+        //     raceType: raceType,
+        //     skillLevel: skillLevel
+        // })
     }
 
-    const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-            setPlan(event.target.value as string);
+    const handleRaceTypeChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+            setRaceType(event.target.value as string);
+        };
+    const handleSkillLevelChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+            setSkillLevel(event.target.value as string);
         };
 
     return (
         <>
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}>
                 <div>
-                    <h1> Enter Phone Number </h1>  
+                    <h1> Get Started </h1>  
                 </div>
             </div>
             <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center'}}>
@@ -39,9 +61,10 @@ const ChoosePlan: React.FC = () => {
                     <div>  
                         <TextField
                             id="outlined-dense"
-                            label="Number"
+                            label="Phone Number"
                             margin="dense"
                             variant="outlined"
+                            onChange={(e) => setPhoneNumber(e.target.value)}
                             style={{ minWidth: '200px' }}
                             />
                     </div>
@@ -49,28 +72,38 @@ const ChoosePlan: React.FC = () => {
                 </div>
             </div>
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}>
-                <div>
-                    <h1> Choose Your Plan </h1>  
-                </div>
-            </div>
-            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}>
                 <FormControl style={{ minWidth: '200px'}}>
-                    <InputLabel>Plan</InputLabel>
+                    <InputLabel>Race Type</InputLabel>
                     <Select 
-                        value={plan}
+                        value={raceType}
                         input={<Input />}
-                        onChange={handleChange}
+                        onChange={handleRaceTypeChange}
                         > 
-                        <MenuItem value={1}> 0 - 5K </MenuItem>
-                        <MenuItem value={2}> 5K - 10K </MenuItem>
-                        <MenuItem value={3}> 10K - Half Marathon </MenuItem>
-                        <MenuItem value={4}> Half Marathon - Marathon </MenuItem>
+                        <MenuItem value={'5K'}> 5K </MenuItem>
+                        <MenuItem value={'10K'}> 10K </MenuItem>
+                        <MenuItem value={'HALFMARATHON'}> Half Marathon </MenuItem>
+                        <MenuItem value={'FULLMARATHON'}> Marathon </MenuItem>
+                    </Select>
+                </FormControl>
+            </div>
+            <div style={{ height: '15px' }}/>
+            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}>
+                <FormControl style={{ minWidth: '200px' }}>
+                    <InputLabel>Skill Level</InputLabel>
+                    <Select 
+                        value={skillLevel}
+                        input={<Input />}
+                        onChange={handleSkillLevelChange}
+                        > 
+                        <MenuItem value={'BEGINNER'}> Beginner </MenuItem>
+                        <MenuItem value={'INTERMEDIATE'}> Intermediate </MenuItem>
+                        <MenuItem value={'ADVANCED'}> Advanced </MenuItem>
                     </Select>
                 </FormControl>
             </div>
             <div style={{ height: '50px' }}/>
             <div>
-                <Button variant='outlined' onSubmit={() => startSubscription(number, plan)}> 
+                <Button variant='outlined' onClick={() => startSubscription(phoneNumber, raceType, skillLevel)}> 
                     Start 
                 </Button>
             </div>

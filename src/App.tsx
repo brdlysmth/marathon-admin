@@ -4,7 +4,6 @@ import { Router, RouteComponentProps, Redirect } from "@reach/router";
 import { colors } from "./theme";
 import Landing from "./components/Landing";
 import ChoosePlan from './components/ChoosePlan';
-import GetPhoneNumber from './components/GetPhoneNumber';
 
 interface RouteProps {
   path: string;
@@ -22,10 +21,6 @@ const App: React.FC = () => {
       path: "/plan",
       Component: ChoosePlan
     },
-    {
-      path: "/number",
-      Component: GetPhoneNumber
-    }
   ];
 
   return (

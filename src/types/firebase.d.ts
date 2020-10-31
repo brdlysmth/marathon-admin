@@ -4,9 +4,10 @@ declare namespace Firebase {
     
     interface Root {
         subscriptions: {
-            [key: string]: {
+            [subscriptionKey: string]: {
                 phoneNumber: String
-                plan: Number
+                raceType: String
+                skillLevel: String
             };
         }
     }
