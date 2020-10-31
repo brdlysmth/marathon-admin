@@ -1,10 +1,11 @@
 {
-  "name": "admin",
+  "name": "marathon-admin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.2.1",
     "@apollo/react-common": "^3.1.4",
+    "@material-ui/core": "^4.11.0",
     "@reach/router": "^1.3.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,7 +14,6 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "antd": "^4.6.5",
     "apollo-link-error": "^1.1.13",
     "graphql": "^15.3.0",
     "react": "^16.13.1",

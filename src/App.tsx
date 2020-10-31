@@ -1,15 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Layout, Menu, Breadcrumb } from "antd";
-import Overlay from "./components/Overlay";
 import { Router, RouteComponentProps, Redirect } from "@reach/router";
-import Home from "./components/Home";
-import Projects from "./components/Projects";
-import Incoming from "./components/Incoming";
-import Outgoing from "./components/Outgoing";
-import AddProject from "./components/AddProject";
 import { colors } from "./theme";
-const { Header, Content, Footer, Sider } = Layout;
+import Landing from "./components/Landing";
 
 interface RouteProps {
   path: string;
@@ -20,38 +13,20 @@ interface RouteProps {
 const App: React.FC = () => {
   const routes: RouteProps[] = [
     {
-      path: "/home",
-      Component: Home,
-    },
-    {
-      path: "/projects",
-      Component: Projects,
-    },
-    {
-      path: "/addProject",
-      Component: AddProject,
-    },
-    {
-      path: "/incoming",
-      Component: Incoming,
-    },
-    {
-      path: "/outgoing",
-      Component: Outgoing,
-    },
+      path: "/",
+      Component: Landing
+    }
   ];
 
   return (
     <div className="App">
-      <Overlay>
-        <Content>
+      {/* <Overlay> */}
           <Router>
             {routes.map(({ Component, path }) => (
               <Component path={path} key={path} />
             ))}
           </Router>
-        </Content>
-      </Overlay>
+      {/* </Overlay> */}
     </div>
   );
 };
