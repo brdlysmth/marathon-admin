@@ -12,6 +12,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
+import HomeIcon from '@material-ui/icons/Home';
+import IconButton from '@material-ui/core/IconButton';
+
 
 const ADD_SUBSCRIPTION = gql`
         mutation addSubscription($input: AddSubscriptionInput!) {
@@ -107,6 +110,13 @@ const ChoosePlan: React.FC = () => {
                     Start 
                 </Button>
             </div>
+            <div style={{ position: 'fixed', bottom: 25, width: '100%'}}>
+                <Link to='/'>
+                    <IconButton>
+                        <HomeIcon />
+                    </IconButton>
+                </Link>
+            </div> 
         </>
     )
 }
