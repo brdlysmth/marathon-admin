@@ -11,7 +11,7 @@ const Landing: React.FC = () => {
         <>
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center' }}>
                 <div>
-                    <h1> Trainer </h1>  
+                    <h1> Ur:Buddy </h1>  
                 </div>
             </div>
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
