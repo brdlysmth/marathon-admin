@@ -1,12 +1,26 @@
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
+import { Firebase } from '../types/firebase';
+
+const config = {
+  apiKey: "AIzaSyAB3lc_Ak2Zz3n1UHDpQByBcaJ-HF0q0-I",
+  authDomain: "marathontrainer-4e293.firebaseapp.com",
+  databaseURL: "https://marathontrainer-4e293.firebaseio.com",
+  projectId: "marathontrainer-4e293",
+  storageBucket: "marathontrainer-4e293.appspot.com",
+};
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
+
+export const auth = firebase.auth();
+export const db = (firebase.database() as unknown) as DBWithChildren<Firebase.Root>;
 
 /**
  * Firebase 
  */
-
-import { Firebase } from '../types/firebase';
-import firebase from './firebase';
-
-export const db = (firebase.database() as unknown) as DBWithChildren<Firebase.Root>;
 
 export function getVal<T = unknown> (
     ref: DB<T> | DBWithChildren<T> 
